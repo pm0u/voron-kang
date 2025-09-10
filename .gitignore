@@ -1,0 +1,5 @@
+ShakeTune_results/**/*.png
+*.conf.bkp
+*.conf.[0-9\-]*
+printer-[0-9\-]*.cfg
+
