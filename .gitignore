@@ -1,4 +1,4 @@
-ShakeTune_results/**/*.png
+ShakeTune_results/**/*
 *.conf.bkp
 *.conf.[0-9\-]*
 printer-[0-9\-]*.cfg
