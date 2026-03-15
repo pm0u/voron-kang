@@ -11,7 +11,7 @@ StealthChanger Voron 350 Klipper config with Beacon-on-shuttle probing and KTC t
 
 ## Interesting bits
 
-- Hybrid tool offset calibration (Nudge XY + Beacon contact Z): [`macros/offsets.cfg`](macros/offsets.cfg)
+- Hybrid tool offset calibration (Nudge XY + Beacon contact Z): [`toolchanger/calibrate-offsets.cfg`](toolchanger/calibrate-offsets.cfg)
   - Public commands:
     - `TC_GET_PROBE_POSITION`
     - `TC_FIND_ALL_TOOL_OFFSETS`
@@ -19,7 +19,7 @@ StealthChanger Voron 350 Klipper config with Beacon-on-shuttle probing and KTC t
     - `TC_SET_CONTACT_PROBE_POSITION X=... Y=...`
 - Nudge:
   - [`configs/nudge.cfg`](configs/nudge.cfg)
-  - [`configs/nudge_variables.cfg`](configs/nudge_variables.cfg)
+  - [`configs/variables.cfg`](configs/variables.cfg)
 - Toolchanger homing override (empty shuttle homing compatible): [`toolchanger/homing.cfg`](toolchanger/homing.cfg)
 - Tool-aware shaper helpers (select ADXL chip from mounted/selected tool, multi tool input shaping): [`macros/toolchanger-input-shaper.cfg`](macros/toolchanger-input-shaper.cfg)
 
