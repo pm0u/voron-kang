@@ -22,8 +22,13 @@ StealthChanger Voron 350 Klipper config with Beacon-on-shuttle probing and KTC t
   - [`configs/variables.cfg`](configs/variables.cfg)
 - Toolchanger homing override (empty shuttle homing compatible): [`toolchanger/homing.cfg`](toolchanger/homing.cfg)
 - Tool-aware shaper helpers (select ADXL chip from mounted/selected tool, multi tool input shaping): [`macros/toolchanger-input-shaper.cfg`](macros/toolchanger-input-shaper.cfg)
+- Orca Slicer build plate → Beacon model mapping with fallback and warning: [`macros/build_plate.cfg`](macros/build_plate.cfg)
+- Nozzle thermal expansion Z compensation (per active tool, applied at print start): [`macros/thermal_expansion_comp.cfg`](macros/thermal_expansion_comp.cfg)
+- M109 deadband override — skips temperature wait if already within ±2.5°C of target: [`toolchanger/toolchanger-macros.cfg`](toolchanger/toolchanger-macros.cfg)
 
 ## Notes and changes
 
 - Tool offsets are intended to be KTC-native (`SET_TOOL_PARAMETER` + `SAVE_TOOL_PARAMETER`) rather than legacy `save_variables` per-tool offsets.
 - `configs/temps.cfg` is included via [`configs/configs.cfg`](configs/configs.cfg) for Mainsail-visible temperature sensors.
+- Bed uses dual loop PID: outer sensor = build plate surface (PB0), inner sensor = heater pad (PB1). Outer loop controls to surface temp; inner PID values in SAVE_CONFIG.
+- Extruders use `pid_v` (velocity-form PID) for faster temperature stabilization on tool changes.
